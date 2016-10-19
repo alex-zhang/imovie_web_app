@@ -8,9 +8,7 @@ import appStore from './store';
 import appRoutes from './routes';
 
 //dynamic create the dom ele.
-let appDomElement = document.createElement('div');
-appDomElement.setAttribute('id', 'react-app');
-document.body.appendChild(appDomElement);
+let appDomElement = document.getElementById('react-app');
 
 //cfg the app history.
 const appHistory = syncHistoryWithStore(hashHistory, appStore);

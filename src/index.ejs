@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="alex.zhang">
+    <meta name="description" content="">
+    <meta name="charset" content="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico?v=<%= htmlWebpackPlugin.options.ver %>>">
+    <style><%=htmlWebpackPlugin.options.bootupStyle%></style>
+</head>
+<body>
+<script><%=htmlWebpackPlugin.options.bootupJs%></script>
+<div id="react-app"></div>
+</body>
+</html>

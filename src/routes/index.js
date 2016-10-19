@@ -11,8 +11,8 @@ const routes = {
   path: '/',
   component: App,
   indexRoute,
+
   childRoutes: [
-    about,
     movies
   ]
 }
