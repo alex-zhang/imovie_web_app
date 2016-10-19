@@ -13,7 +13,7 @@
     "url": "git+https://github.com/alex-zhang/imovie_web_app.git"
   },
   "dependencies": {
-    "nesting-reducer": "0.0.5",
+    "nesting-reducer": "^1.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
