@@ -5,19 +5,9 @@ class Movies extends React.Component {
 
   render() {
     return (
-      <SwipeViews>
-        <div title="tab1">
-          Page 1
-        </div>
-
-        <div title="tab2">
-          Page 2
-        </div>
-
-        <div title="tab2">
-          Page 3
-        </div>
-      </SwipeViews>
+      <div>
+        {this.props.children}
+     </div>
     );
   }
 }

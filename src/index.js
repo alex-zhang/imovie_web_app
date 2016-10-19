@@ -7,6 +7,8 @@ import {Router, Route, hashHistory} from 'react-router';
 import appStore from './store';
 import appRoutes from './routes';
 
+import './styles/app.styl';
+
 //dynamic create the dom ele.
 let appDomElement = document.getElementById('react-app');
 
