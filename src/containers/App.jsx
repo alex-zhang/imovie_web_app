@@ -1,12 +1,13 @@
 import React from 'react';
+import FullfillBox from '../components/FullfillBox';
 
 class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <FullfillBox>
         {this.props.children}
-      </div>
+      </FullfillBox>
     );
   }
 }

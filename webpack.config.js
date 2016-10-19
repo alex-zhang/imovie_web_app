@@ -46,7 +46,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.ejs',
       bootupStyle:
-      `body {margin:0}`,
+      `html,body,#react-app{width:100%;height:100%;margin:0};`,
       bootupJs:
       `__VERSION__="${__VERSION__}";` +
       `__ENV__= "${__ENV__}";` +

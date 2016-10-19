@@ -1,12 +1,18 @@
 import React from 'react';
-import styles from 'index.styl';
+
+const styles = {
+  mainBg: {
+    "background-image": "url(./assets/image004.png)",
+    "background-size": "100% 100%"
+  }
+}
 
 class MovieDetail extends React.Component {
 
-
   render() {
     return (
-      <div style={{"background-image":"./assets/image004.png"}}>
+      <div style={styles.mainBg}>
+        ad
       </div>
     );
   }

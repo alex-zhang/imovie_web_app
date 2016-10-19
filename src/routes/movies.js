@@ -4,6 +4,7 @@ import MovieDetail from '../containers/movieDetail/MovieDetail';
 
 
 const movieCategory = {
+  path: '?category',
   component: MovieCategory
 }
 
@@ -15,13 +16,10 @@ const movieDetail = {
 const movies = {
   path: 'movies',
   component: Movies,
-  indexRoute: movieCategory,
   childRoutes: [
     movieCategory,
     movieDetail
   ]
 }
-
-
 
 export default movies;

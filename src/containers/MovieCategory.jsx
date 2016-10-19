@@ -4,7 +4,9 @@ import SwipeViews from 'react-swipeable-views';
 class MovieCategory extends React.Component {
 
   render() {
+    console.log('asdasdad');
     return (
+
       <SwipeViews>
         <div title="tab1">
           Page 1
