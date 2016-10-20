@@ -1,18 +1,14 @@
 import React from 'react';
+import PageBox from '../components/PageBox';
 
-const styles = {
-  mainBg: {
-    "background-image": "url(./assets/image004.png)",
-    "background-size": "100% 100%"
-  }
-}
+import MovieInfoPageContent from './MovieInfoPageContent';
 
 class MovieInfoPage extends React.Component {
 
   render() {
     return (
-      <PageBox style={styles.mainBg}>
-        ad
+      <PageBox>
+        <MovieInfoPageContent />
       </PageBox>
     );
   }

@@ -20,10 +20,11 @@
   },
   "dependencies": {
     "install": "^0.8.1",
-    "nesting-reducer": "^1.0.0",
+    "nesting-reducer": "^1.0.1",
     "npm": "^3.10.8",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-gesture": "0.0.1",
     "react-id-swiper": "^1.0.5",
     "react-motion": "^0.4.5",
     "react-redux": "^4.4.5",

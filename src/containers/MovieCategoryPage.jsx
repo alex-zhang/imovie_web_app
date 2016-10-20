@@ -12,14 +12,10 @@ class MovieCategoryPage extends React.Component {
 
   render() {
 
-    debugger;
-
-    this.props;
-
     return (
       <PageBox>
         <PageBox>
-          <ADSwiperPlayer slides={datas.slides}/>
+          <ADSwiperPlayer slides={this.props.slides}/>
           <div style={{height:'100%', flexGrow: 1}}>
             <SwipeableViews>
               <MovieCategoryContent />
@@ -37,7 +33,8 @@ class MovieCategoryPage extends React.Component {
 
 function mapStateToProps(state, dispatch) {
   return {
-    movies: state.data.movies
+    movies: state.movies,
+    slides: state.slides
   }
 }
 
