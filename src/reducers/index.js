@@ -18,7 +18,7 @@ let stateTree = {
     lang: "zh-CN"
   },
 
-  slides: handleActionsReducor(arrayUtil.newArray(4).map((val, idx)=>{
+  slides: handleActionsReducor(arrayUtil.newArray(4, (val, idx)=>{
     return {
       id:idx + 1,
       title: `img ${idx}`,
@@ -28,7 +28,7 @@ let stateTree = {
     [ActionTypes.change_slides] : actionPayloadReducer
   }),
 
-  movies: handleActionsReducor(arrayUtil.newArray(4).map((val, idx)=>{
+  movies: handleActionsReducor(arrayUtil.newArray(4, (val, idx)=>{
     return {
       id:idx + 1,
       title: `电影 ${idx + 1}`
