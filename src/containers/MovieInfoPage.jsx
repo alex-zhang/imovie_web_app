@@ -7,15 +7,15 @@ const styles = {
   }
 }
 
-class MovieDetail extends React.Component {
+class MovieInfoPage extends React.Component {
 
   render() {
     return (
-      <div style={styles.mainBg}>
+      <PageBox style={styles.mainBg}>
         ad
-      </div>
+      </PageBox>
     );
   }
 }
 
-export default MovieDetail;
+export default MovieInfoPage;

@@ -1,7 +1,6 @@
-const about = {
+import AboutPage from '../containers/AboutPage';
+
+export default {
   path: 'about',
-  component: null
+  component: AboutPage
 };
-
-export default about;
-

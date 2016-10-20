@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PackageJson = require('./package.json');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 //marco fo app
 global.__VERSION__ = PackageJson.version;
@@ -17,24 +18,34 @@ module.exports = {
     './index.js'
   ],
 
+  devtool: 'source-map',
+
   output:{
     path: __dirname + '/dist',
     filename: 'app-bundle-[hash].js'
   },
+
   module: {
     loaders: [
+      //css
       {
-        test: /\.styl$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!autoprefixer!stylus'
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract(['css'])
       },
 
+      {
+        test: /\.styl$/,
+        loader: ExtractTextPlugin.extract("css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!autoprefixer!stylus")
+      },
+
+      //assets
       { test: /\.gif$/, loader: "url-loader?limit=10000&mimetype=image/gif" },
       { test: /\.jpg$/, loader: "url-loader?limit=10000&mimetype=image/jpg" },
       { test: /\.png$/, loader: "url-loader?limit=10000&mimetype=image/png" },
       { test: /\.svg/, loader: "url-loader?limit=26000&mimetype=image/svg+xml" },
-
       { test: /\.(woff|woff2|ttf|eot)/, loader: "url-loader?limit=1" },
 
+      //js
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -46,7 +57,7 @@ module.exports = {
     hot: true
   },
   resolve:{
-    extensions:['', '.js','.json', '.jsx']
+    extensions:['', '.js', '.json', '.jsx']
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -56,6 +67,10 @@ module.exports = {
     }),
 
     new webpack.HotModuleReplacementPlugin(),
+
+    new ExtractTextPlugin(`app-bundle-[[contenthash]].css`, {
+      allChunks: true
+    }),
 
     new HtmlWebpackPlugin({
       template: 'index.ejs',
@@ -85,4 +100,4 @@ module.exports = {
         `
     })
   ]
-}
+};

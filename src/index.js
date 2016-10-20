@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {Router, Route, hashHistory} from 'react-router';
+import './styles/app.styl';
 
 import appStore from './store';
 import appRoutes from './routes';

@@ -1,12 +1,15 @@
 import App from "../containers/App";
-import movies from "./movies";
 
-const routes = {
+import about from './about';
+import movieCategory from './movieCategory';
+import movieInfo from './movieInfo';
+
+export default {
   path: '/',
   component: App,
   childRoutes: [
-    movies
+    about,
+    movieCategory,
+    movieInfo
   ]
 }
-
-export default routes;

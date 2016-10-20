@@ -1,13 +1,14 @@
 import React from 'react';
-import FullfillBox from '../components/FullfillBox';
+import PageBox from '../components/PageBox';
+import StatusMenuBar from '../components/StatusMenuBar';
 
 class App extends React.Component {
 
   render() {
     return (
-      <FullfillBox>
+      <PageBox>
         {this.props.children}
-      </FullfillBox>
+      </PageBox>
     );
   }
 }
