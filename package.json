@@ -29,13 +29,19 @@
     "react-swipeable-views": "^0.7.10",
     "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "stylus": "^0.54.5"
   },
   "devEngines": {
     "node": "5.x || 6.x",
     "npm": "2.x || 3.x"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "stylus-loader": "^2.3.1",
+    "url-loader": "^0.5.7",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-class-properties": "^6.16.0",
