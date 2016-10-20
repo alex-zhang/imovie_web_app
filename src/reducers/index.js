@@ -21,19 +21,31 @@ let stateTree = {
   slides: handleActionsReducor(arrayUtil.newArray(4, (val, idx)=>{
     return {
       id:idx + 1,
-      title: `img ${idx}`,
+      title: `post img ${idx}`,
       url: `./assets/img_${idx+1}.jpg`
     }
   }), {
     [ActionTypes.change_slides] : actionPayloadReducer
   }),
 
-  movies: handleActionsReducor(arrayUtil.newArray(4, (val, idx)=>{
-    return {
-      id:idx + 1,
-      title: `电影 ${idx + 1}`
+  movieCategories: handleActionsReducor([
+    {
+      id: 1,
+      title: '热门电影'
+    },
+    {
+      id:2,
+      title: '搞笑短片'
+    },
+    {
+      id:3,
+      title: '动漫'
+    },
+    {
+      id:4,
+      title: '鬼畜MV'
     }
-  }), {
+  ], {
     [ActionTypes.change_movies] : actionPayloadReducer
   })
 };

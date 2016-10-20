@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.styl';
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
 
 	static defaultProps = {width: '100%', height:'100%'}
 

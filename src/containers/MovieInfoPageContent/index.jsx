@@ -4,7 +4,7 @@ import {getDirection} from 'react-gesture/lib/utils/geture-calculations';
 
 import styles from './styles.styl';
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
 
   goback() {
   }

@@ -3,7 +3,7 @@ import Swiper from 'react-id-swiper';
 import 'react-id-swiper/libs/styles/css/swiper.css';
 import styles from './styles.styl';
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
 
   static defaultProps = {
     slides: []
@@ -13,6 +13,14 @@ export default class extends React.Component {
     slides: React.PropTypes.array
   };
 
+  onItemClick(slide) {
+    let {onItemClick} = this.props;
+    if(!onItemClick) {
+      return;
+    }
+
+    onItemClick(slide);
+  }
 
   render() {
     const params = {
@@ -20,15 +28,21 @@ export default class extends React.Component {
       paginationClickable: true,
       nextButton: '.swiper-button-next',
       prevButton: '.swiper-button-prev',
+      autoplay: 2000,
       loop: true,
       grabCursor: true
     };
-
+    let self = this;
     return (
       <div className={styles.self}>
         <Swiper {...params}>
           {this.props.slides.map((slide)=>{
-            return <div className={styles.slideItem} key={slide.id} style={{width:100,backgroundImage: `url(${slide.url})`}}></div>
+            return <div className={styles.slideItem}
+                        key={slide.id}
+                        style={{width:100,backgroundImage: `url(${slide.url})`}}
+                        onClick={(function(slide){
+                          self.onItemClick(slide);
+                        })(slide)}></div>
           })}
         </Swiper>
       </div>
