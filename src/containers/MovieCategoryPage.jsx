@@ -30,8 +30,14 @@ class MovieCategoryPage extends React.PureComponent {
     }));
   }
 
-  onSlideItemClick(slide) {
+  onSlideItemClick() {
     console.log('onSlideItemClick');
+
+    let {dispatch} = this.props;
+
+    dispatch(replace({
+      pathname: '/movie',
+    }));
   }
 
   render() {
@@ -51,13 +57,29 @@ class MovieCategoryPage extends React.PureComponent {
       }
     });
 
+    let mockClickStyle = {
+      backgroundColor: 'blue',
+      position:'absolute',
+      left: "50%",
+      top: 80,
+      color:"white",
+      fontSize: 20,
+      opacity: 0.4,
+      marginLeft:-170,
+      width: 340,
+      height: 150,
+      zIndex:9999
+    }
+
     return (
       <PageBox>
         <PageBox>
           <TitleTabBar key="titleTabBar" tabs={tabs} selectedIndex={selectedIndex}
                        onTabChange={(idx)=>{this.onTabChange(idx)}}/>
 
-          <ADSwiperPlayer key="adPlayer" slides={slides} onItemClick={(slide)=>{this.onSlideItemClick(slide)}}/>
+          <ADSwiperPlayer key="adPlayer" slides={slides} />
+
+          <div style={mockClickStyle} onClick={()=>{this.onSlideItemClick()}}>Click Me!</div>
 
           <div style={{height:'100%', flexGrow: 1}}>
             <SwipeableViews key="swiperViews" index={selectedIndex}

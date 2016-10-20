@@ -39,10 +39,7 @@ export default class extends React.PureComponent {
           {this.props.slides.map((slide)=>{
             return <div className={styles.slideItem}
                         key={slide.id}
-                        style={{width:100,backgroundImage: `url(${slide.url})`}}
-                        onClick={(function(slide){
-                          self.onItemClick(slide);
-                        })(slide)}></div>
+                        style={{width:100,backgroundImage: `url(${slide.url})`}}></div>
           })}
         </Swiper>
       </div>

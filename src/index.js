@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {Router, Route, hashHistory} from 'react-router';
+import {push, replace} from 'react-router-redux'
 import './styles/app.styl';
 
 import appStore from './store';
@@ -20,3 +21,11 @@ ReactDOM.render((
     <Router history={appHistory} routes={appRoutes} />
   </Provider>
 ), appDomElement);
+
+//todo for test
+appStore.dispatch(replace({
+  pathname: '/movies',
+  query: {
+    catgory: 1
+  }
+}));
