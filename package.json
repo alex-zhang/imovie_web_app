@@ -7,10 +7,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --progress --colors",
-    "build": "webpack --progress --colors"
+    "build": "__ENV__=prod __DEBUG__=false NODE_ENV=production webpack --progress --colors"
   },
   "appCfg": {
     "dev": {
+      "apiPerfix:": "./v1/api/"
+    },
+    "prod": {
       "apiPerfix:": "./v1/api/"
     }
   },
@@ -31,6 +34,7 @@
     "react-swipeable-views": "^0.7.10",
     "react-tabs-navigation": "^0.4.4",
     "redux": "^3.6.0",
+    "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0"
   },
   "devEngines": {

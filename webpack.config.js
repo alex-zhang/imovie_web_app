@@ -6,15 +6,25 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //marco fo app
 global.__VERSION__ = PackageJson.version;
 global.__ENV__ = process.env.__ENV__ || 'dev';
-global.__DEBUG__ = process.env.DEBUG === undefined;
+global.__DEBUG__ = process.env.__DEBUG__ === undefined;
 global.__BUILD_TIME__ = Date.now();
 global.__CONFIG__ = PackageJson.appCfg[__ENV__];
 
+console.log('------------------');
+console.log(__VERSION__);
+console.log(__ENV__);
+console.log(__DEBUG__);
+console.log(__BUILD_TIME__);
+console.log(JSON.stringify(__CONFIG__));
+console.log('------------------');
+
 module.exports = {
   context: __dirname + '/src',
-  entry: [
+  entry: __ENV__ === 'dev' ? [
     "webpack-dev-server/client?http://0.0.0.0:8080",
     'webpack/hot/only-dev-server',
+    './index.js'
+  ] : [
     './index.js'
   ],
 
@@ -46,7 +56,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel']
+        loaders: __ENV__ === 'dev' ? ['react-hot', 'babel'] : ['babel']
       }
     ]
   },
@@ -63,7 +73,7 @@ module.exports = {
       }
     }),
 
-    new webpack.HotModuleReplacementPlugin(),
+    __ENV__ === 'dev' ? new webpack.HotModuleReplacementPlugin() : null,
 
     new ExtractTextPlugin(`app-bundle-[[contenthash]].css`, {
       allChunks: true
@@ -96,5 +106,7 @@ module.exports = {
           })();
         `
     })
-  ]
+  ].filter((val)=>{
+    return !!val;
+  })
 };
