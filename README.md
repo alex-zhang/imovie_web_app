@@ -1,15 +1,25 @@
-# imovie_web_app
+imovie web app
 =========================
 
-# What is it
+A demo of how to use `react`, `redux`, `router` `webpack` `nesting-reducer` ... in SPA.
+
+
+What This Is
 ----------------------
 
-`imovie_web_app` is a demo of how to use `react`, `redux`, `router` in SPA and the config of `webpack`, `babel` of es6 in dev mode.
+* A Demo of how to use `react`, `redux`, `router` `webpack` `nesting-reducer`
+* A think of CSS module in SPA
+* A React Application
+* Think the use of `'nesting-reducer'`
 
 其中 'nesting-reducer' 和作用参见地址 [https://github.com/alex-zhang/nesting-reducer](https://github.com/alex-zhang/nesting-reducer)
 
-# Installing
+
+Installing
 ----------------------
+
+`yarn` is recommand.
+
 
 ``` bash
 git clone git@github.com:alex-zhang/imovie_web_app.git
@@ -18,44 +28,18 @@ npm install
 npm run start
 ```
 
-推荐使用yarn
-
-```bash
-git clone git@github.com:alex-zhang/imovie_web_app.git
-cd imovie_web_app
-yarn
-yarn run start
-```
-
-# How to Run
+How to Run
 ----------------------
 
 ```bash
 npm run start
-open http://localhost:8080 in browser
 ```
+open http://localhost:8080/moviews in browser
 
-推荐使用yarn
-
-```bash
-yarn run start
-open http://localhost:8080 in browser
-```
-
-[http://localhost:8080](http://localhost:8080)
 
 # How to Build
 ----------------------
 
 ```bash
-npm run buld
+NODE_EVN=production npm run buld
 ```
-
-推荐使用yarn
-
-```bash
-yarn run build
-```
-
-# Project Structure
-----------------------
