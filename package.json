@@ -11,7 +11,7 @@
   },
   "appCfg": {
     "dev": {
-      "apiPerfix:": "./v3/api/"
+      "apiPerfix:": "./v1/api/"
     }
   },
   "repository": {

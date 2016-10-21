@@ -32,19 +32,16 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(['css'])
       },
-
       {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract("css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!autoprefixer!stylus")
       },
-
       //assets
       { test: /\.gif$/, loader: "url-loader?limit=10000&mimetype=image/gif" },
       { test: /\.jpg$/, loader: "url-loader?limit=10000&mimetype=image/jpg" },
       { test: /\.png$/, loader: "url-loader?limit=10000&mimetype=image/png" },
       { test: /\.svg/, loader: "url-loader?limit=26000&mimetype=image/svg+xml" },
       { test: /\.(woff|woff2|ttf|eot)/, loader: "url-loader?limit=1" },
-
       //js
       {
         test: /\.jsx?$/,
