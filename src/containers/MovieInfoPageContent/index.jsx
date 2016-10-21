@@ -4,6 +4,7 @@ import {getDirection} from 'react-gesture/lib/utils/geture-calculations';
 import {push, replace} from 'react-router-redux'
 import {connect} from 'react-redux';
 import styles from './styles.styl';
+import PageBox from '../../components/PageBox';
 
 class MovieInfoPageContent extends React.PureComponent {
 
@@ -37,13 +38,16 @@ class MovieInfoPageContent extends React.PureComponent {
   }
 
   render() {
-    return <ReactGesture swipeThreshold={50}
-                         onMouseUp={(evt)=>{this.onSwipComplete(evt)}}
-                         onTouchEnd={(evt)=>{this.onSwipComplete(evt)}}>
+    return <PageBox>
+      <ReactGesture swipeThreshold={50}
+                    onMouseUp={(evt)=>{this.onSwipComplete(evt)}}
+                    onTouchEnd={(evt)=>{this.onSwipComplete(evt)}}>
         <div className={styles.self}>
-          <div className={styles.backBtn} onClick={()=>{this.onBackBtnClick()}}>Click Me!</div>
         </div>
       </ReactGesture>
+
+      <div className={styles.backBtn} onClick={()=>{this.onBackBtnClick()}}>Click Me!</div>
+    </PageBox>
   }
 }
 
