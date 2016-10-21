@@ -32,17 +32,17 @@ yarn run start
 
 ```bash
 npm run start
-open http://localhost:8080/moviews in browser
+open http://localhost:8080 in browser
 ```
 
 推荐使用yarn
 
 ```bash
 yarn run start
-open http://localhost:8080/moviews in browser
+open http://localhost:8080 in browser
 ```
 
-[http://localhost:8080/moviews](http://localhost:8080/moviews)
+[http://localhost:8080](http://localhost:8080)
 
 # How to Build
 ----------------------
